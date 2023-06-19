@@ -141,8 +141,8 @@
         width: 300px;
         left: 50%;
         background: url("../public/Images/hero.png");
-        background-position: 50px 50px;
-        background-size: contain;
+        background-position: center;
+        background-size: 200px;
         background-repeat: no-repeat;
         border-radius: 50px;
         transform: translateX(-50%);
