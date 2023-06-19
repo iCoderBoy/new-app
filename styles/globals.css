@@ -1,0 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: #1e1e1e;
+  scroll-behavior: smooth;
+  
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.fadeInUp
+{
+  animation: fadeinup 1s ease;
+}
+@keyframes fadeinup {
+  from{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

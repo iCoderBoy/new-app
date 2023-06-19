@@ -1,0 +1,37 @@
+.body{
+    min-height: 200vh;
+}
+.container
+{
+    width: 550px;
+    border: 2px solid black;
+    margin: 50px auto;
+    position: relative;
+
+}
+.purple,
+.yellow,
+.red,
+.orange
+{
+    width: 150px;
+    height: 150px;
+}
+.purple
+{
+    background-color: purple;
+}
+.yellow
+{
+    background-color: yellow;
+}
+.red
+{
+    background-color: red;
+}
+.orange
+{
+    background-color: orange;
+    position: sticky;
+    top: 0;
+}

@@ -1,0 +1,31 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .project h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .project img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .project p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
