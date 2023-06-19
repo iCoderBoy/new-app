@@ -25,6 +25,10 @@ export default function Hero() {
                     <a href='#'>Contact Me</a>
                 </div>
                 <div className={styles.imageSide}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                     <div className={styles.toogleOne}>
                         <span><Analytics fontSize='large'/></span>
                         <h3>FullStack</h3>
@@ -34,9 +38,7 @@ export default function Hero() {
                         <h3>UI/UX</h3>
                     </div>
 
-                    <div className={styles.imgBox}>
-                        <Image src="/Images/hero.png" width={300} height={400}/>
-                    </div>
+                    
                 </div>
             </div>
         </section>
