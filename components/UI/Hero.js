@@ -2,16 +2,42 @@ import Image from 'next/image'
 import { AddAPhoto, Analytics} from '@mui/icons-material'
 import DesktopMacIcon from '@mui/icons-material/DesktopMac';
 import { Typewriter } from 'react-simple-typewriter'
+import { motion } from 'framer-motion';
 
 import styles from '../../styles/hero.module.css'
 
+const cardAnimation = {
+    hidden: {
+        y: 100,
+        opacity: 0,
+    },
+    visible: {
+        y:0,
+        opacity:1,
+    },
+}
+const textAnimation = {
+    hidden: {
+        x: -100,
+        opacity: 0,
+    },
+    visible: custon => ( {
+        x: 0,
+        opacity:1,
+        transition: {delay: custon * 0.2},
+    }),
+}
 
 export default function Hero() {
     return(
-        <section className={styles.hero}>
+        <motion.section
+        initial="hidden"
+        whileInView="visible" 
+        className={styles.hero}
+        >
             <div className={styles.heroBox}>
                 <div className={styles.content}>
-                    <h1>Hi. I am <span>
+                    <motion.h1 variants={textAnimation}>Hi. I am <span>
                         <Typewriter
                             words={['<Salikh/>', '<Coder/>', '<Manager/>']}
                             loop={Infinity}
@@ -19,12 +45,12 @@ export default function Hero() {
                             deleteSpeed={50}
                             delaySpeed={1000}
                         />
-                    </span></h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptas dolore quos molestiae at sequi dicta quia hic reprehenderit sapiente quo debitis, asperiores delectus eaque!</p>
-                    <a href='#'>Download CV</a>
-                    <a href='#'>Contact Me</a>
+                    </span></motion.h1>
+                    <motion.p custom={1} variants={textAnimation}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptas dolore quos molestiae at sequi dicta quia hic reprehenderit sapiente quo debitis, asperiores delectus eaque!</motion.p>
+                    <motion.a custom={2} href='#' variants={textAnimation}>Download CV</motion.a>
+                    <motion.a custom={3} href='#' variants={textAnimation}>Contact Me</motion.a>
                 </div>
-                <div className={styles.imageSide}>
+                <motion.div variants={cardAnimation} className={styles.imageSide}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -39,8 +65,8 @@ export default function Hero() {
                     </div>
 
                     
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     )
 }
