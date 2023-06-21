@@ -50,7 +50,7 @@ export default function Hero() {
                     <motion.a custom={2} href='#' variants={textAnimation}>Download CV</motion.a>
                     <motion.a custom={3} href='#' variants={textAnimation}>Contact Me</motion.a>
                 </div>
-                <motion.div variants={cardAnimation} className={styles.imageSide}>
+                <motion.div className={styles.imageSide}>
                     <span></span>
                     <span></span>
                     <span></span>
