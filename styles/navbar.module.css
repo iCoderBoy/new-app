@@ -1,0 +1,145 @@
+.nav {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    color: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: transparent;
+    z-index: 1000;
+  }
+ 
+  .nav nav {
+    display: flex;
+    left: 0;
+    align-items: center;
+  }
+  
+  .nav nav a {
+    margin: 0 10px;
+    font-weight: 600;
+    padding: 9px 10px;
+    border-radius: 50px;
+    transition: 0.5s;
+  }
+  
+  .nav nav a:hover {
+    background: rgba(143, 138, 138, 0.262);
+    border-bottom: 1px solid #eff6ff36;
+  }
+  
+  .nav h3 {
+    font-size: 26px;
+    font-weight: 800;
+  }
+  
+  .nav h3 span {
+    padding: 1px 10px;
+    margin: 0 2px;
+    color: #333;
+    background-color: #ffa31a;
+    border-radius: 10px;
+  }
+  
+  .nav menu a {
+    margin: 0 3px;
+    font-weight: 700;
+    padding: 5px 10px;
+    background: #ffa31a;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  
+  .nav menu a:nth-child(1) {
+    background: transparent;
+  }
+  
+  .nav menu a:nth-child(1):hover {
+    background: rgba(143, 138, 138, 0.262);
+    border-bottom: 1px solid #eff6ff36;
+  }
+  
+  .nav menu a:nth-child(2):hover {
+    border-bottom: 1px solid #eff6ffb5;
+  }
+  
+  /* Hamburger menu styles */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .bar
+  {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+  .bar .toog{
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    background-color: #eff6ff;
+    transition: 0.4s;
+  }
+
+  .bar .toog:nth-child(1) {
+    top: 0;
+  }
+  
+  .bar .toog:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    
+  }
+  
+  .bar .toog:nth-child(3) {
+    bottom: 0;
+  }
+  
+  .active .toog:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .active .toog:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .active .toog:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Media query for screens smaller than 600px */
+  @media (max-width: 788px) {
+    .nav nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: #ffffff0b;
+      backdrop-filter: blur(2px) !important;
+      padding: 20px;
+    }
+  
+    .nav nav.open {
+      display: flex;
+    }
+  
+    .nav menu {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
