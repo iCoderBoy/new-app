@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {AutoAwesome } from "@mui/icons-material";
-import VanillaTilt from "vanilla-tilt";
+import Image from "next/image";
 
 
 // Import Swiper styles
@@ -50,13 +50,13 @@ export default function AboutUs() {
             className="mySwiper"
           >
             <SwiperSlide className={styles.itemSwiper}>
-              <img src="/Images/man1.jpg" />{" "}
+              <Image src="/Images/man1.jpg" width={500} height={300} />
             </SwiperSlide>
             <SwiperSlide className={styles.itemSwiper}>
-              <img src="/Images/man2.jpg" />{" "}
+              <Image src="/Images/man2.jpg" width={500} height={300} />
             </SwiperSlide>
             <SwiperSlide className={styles.itemSwiper}>
-              <img src="/Images/man3.jpg" />{" "}
+              <Image src="/Images/man3.jpg" width={500} height={300} />
             </SwiperSlide>
           </Swiper>
         </div>
