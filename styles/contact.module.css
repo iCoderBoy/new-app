@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+.contact {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  position: relative;
+  
+}
+
+.formSec {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 30px;
+  justify-content: center;
+  height: 100%;
+}
+.formSec h2 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 500;
+}
+.formSec .inbutBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+.formSec .inbutBox input,
+.formSec .inbutBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+.formSec .inbutBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+.formSec .inbutBox input:focus ~ span,
+.formSec .inbutBox input:valid ~ span,
+.formSec .inbutBox textarea:valid ~ span,
+.formSec .inbutBox textarea:focus ~ span {
+  color: #ffa31a;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+.formSec .inbutBox input[type="submit"] {
+  width: 100px;
+  background: #ffa31a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 18px;
+}
+.imgSec {
+  position: relative;
+  background-size: cover;
+  display: flex;
+  width: 400px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 780px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    position: relative;
+    flex-direction: column;
+    position: relative;
+    background: transparent;
+  }
+  .formSec {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
+    justify-content: center;
+    height: 100%;
+  }
+}
