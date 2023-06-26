@@ -7,7 +7,9 @@
   justify-content: center;
  
 }
-
+.section h1{
+  color:#fff;
+}
 .container {
   height: fit-content;
   width: 90%;
