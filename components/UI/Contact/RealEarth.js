@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const RealEarth = () => {
   useEffect(() => {
@@ -9,20 +10,20 @@ const RealEarth = () => {
     let earthMesh;
     let cloudMesh;
     let light;
+    let controls;
 
     function init() {
       const canvas = document.querySelector("#c");
 
       scene = new THREE.Scene();
 
-      camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000); // Adjust the aspect ratio to 1
+      camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
       camera.position.z = 2;
       scene.add(camera);
 
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); // Set alpha to true for canvas transparency
-      renderer.setSize(400, 400); // Set the size to 400x400 pixels
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+      renderer.setSize(400, 400);
 
-      // create earth geometry
       const earthGeometry = new THREE.SphereGeometry(0.6, 32, 32);
 
       const textureLoader = new THREE.TextureLoader();
@@ -39,20 +40,17 @@ const RealEarth = () => {
       });
 
       earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
-      earthMesh.name = "earthMesh"; // Add a name to the mesh for rotation
+      earthMesh.name = "earthMesh";
       scene.add(earthMesh);
 
-      // set ambient light
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
       scene.add(ambientLight);
 
-      // set directional light
       light = new THREE.DirectionalLight(0xffffff, 1);
       light.position.set(5, 3, 5);
       scene.add(light);
 
-      // cloud
-      const cloudGeometry = new THREE.SphereGeometry(0.63, 32, 32);
+      const cloudGeometry = new THREE.SphereGeometry(0.65, 32, 32);
 
       const cloudMaterial = new THREE.MeshPhongMaterial({
         map: textureLoader.load("/Images/texture/earthCloud.png"),
@@ -60,8 +58,11 @@ const RealEarth = () => {
       });
 
       cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
-      cloudMesh.name = "cloudMesh"; // Add a name to the mesh for rotation
+      cloudMesh.name = "cloudMesh";
       scene.add(cloudMesh);
+
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableZoom = false;
 
       animate();
     }
@@ -77,6 +78,8 @@ const RealEarth = () => {
         cloudMesh.rotation.y += 0.0015;
       }
 
+      controls.update();
+
       render();
     };
 
@@ -85,6 +88,11 @@ const RealEarth = () => {
     };
 
     init();
+
+    return () => {
+      // Cleanup function
+      controls.dispose();
+    };
   }, []);
 
   return (
